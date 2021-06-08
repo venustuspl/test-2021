@@ -1,7 +1,10 @@
 package pl.venustus.Test2021.test;
 
-public class test1 {
-    public static Integer calcShortWayLadder(String text) {
+import org.springframework.stereotype.Service;
+
+@Service
+public class ShortWayLadder {
+    public Integer calcShortWayLadder(String text) {
         String[] strArray = text.split(" ");
         Integer result = Integer.parseInt(strArray[0]);
         int i;
@@ -16,13 +19,14 @@ public class test1 {
                 i++;
             }
         }
-        if (strArray.length%2 != 0){
+        if (strArray.length % 2 == 0) {
             result = result + Integer.parseInt(strArray[strArray.length - 1]);
         }
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println("Result: " + calcShortWayLadder("1 10 100 1 10 1 100 15 20 10 1"));
+        ShortWayLadder shortWayLadder = new ShortWayLadder();
+        System.out.println("Result: " + shortWayLadder.calcShortWayLadder("1 10 100 1 10 15 10 "));
     }
 }
