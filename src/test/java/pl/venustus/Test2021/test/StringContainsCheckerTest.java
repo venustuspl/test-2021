@@ -14,12 +14,22 @@ class StringContainsCheckerTest {
     }
 
     @Test
-    void checkContainString() {
+    void shouldFoundStingAInStringB() {
         //given
         String testA = "qwerty", testB = "qswdeffrgthhyy";
         //when
         Boolean result = stringContainsChecker.checkContainString(testA, testB);
         //then
-        assertThat(result).isEqualTo(true);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    void shouldNotFoundStingAInStringB() {
+        //given
+        String testA = "qwerty", testB = "qswdeffrghhyy";
+        //when
+        Boolean result = stringContainsChecker.checkContainString(testA, testB);
+        //then
+        assertThat(result).isFalse();
     }
 }
