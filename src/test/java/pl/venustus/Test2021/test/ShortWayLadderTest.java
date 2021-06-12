@@ -15,7 +15,7 @@ class ShortWayLadderTest {
     }
 
     @Test
-    void shouldCalcShortWayLadderReturnCorrectValu() {
+    void shouldCalcShortWayLadderReturnCorrectValue() {
         //given
         String testString = "1 10 100 1 10 15 10 23";
         //when

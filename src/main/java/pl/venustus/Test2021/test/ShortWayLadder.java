@@ -12,14 +12,18 @@ public class ShortWayLadder {
         String[] strArray = text.split(" ");
         Integer result = Integer.parseInt(strArray[0]);
         int i;
+        int rung1;
+        int rung2;
         for (i = 0; i < (strArray.length - 2); i++) {
-            if ((Integer.parseInt(strArray[i]) + Integer.parseInt(strArray[i + 1]))
-                    < (Integer.parseInt(strArray[i]) + Integer.parseInt(strArray[i + 2]))) {
-                result = result + Integer.parseInt(strArray[i + 1]);
-                logger.log(Level.INFO, "rung 1 :" + Integer.parseInt(strArray[i + 1]));
+            rung1 = Integer.parseInt(strArray[i + 1]);
+            rung2 = Integer.parseInt(strArray[i + 2]);
+            if ((Integer.parseInt(strArray[i]) + rung1)
+                    < (Integer.parseInt(strArray[i]) + rung2)) {
+                result = result + rung1;
+                logger.log(Level.INFO, "rung 1 : {0} ", rung1);
             } else {
-                result = result + Integer.parseInt(strArray[i + 2]);
-                logger.log(Level.INFO, "rung 2 :" + Integer.parseInt(strArray[i + 2]));
+                result = result + rung2;
+                logger.log(Level.INFO, "rung 2 : {0}", rung2);
                 i++;
             }
         }
